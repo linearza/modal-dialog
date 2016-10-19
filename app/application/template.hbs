@@ -1,0 +1,42 @@
+
+<button {{action 'openModal'}}>Open</button>
+
+{{lorem-ipsum length=2000}}
+
+<button {{action 'openModal'}}>Open</button>
+
+{{lorem-ipsum length=2000}}
+
+<button {{action 'openModal'}}>Open</button>
+
+
+{{#if modalShowing}}
+  {{#modal-dialog
+      close='closeModal'
+      translucentOverlay=true
+      targetAttachment='none'
+      container-class='centered-scrolling-container'
+      overlay-class='centered-scrolling-overlay'
+      wrapper-class='centered-scrolling-wrapper'
+  }}
+    <h1>Really Long Content To Demonstrate Scrolling</h1>
+    <ul>
+      <li>Hover over modal and scroll</li>
+      <li>Also hover over overlay and scroll</li>
+    </ul>
+    {{lorem-ipsum length=1000}}
+
+
+    <input type="text" placeholder="Name" />
+    <input type="email" placeholder="Email" />
+    <input type="password" placeholder="password" />
+
+     <br ><br ><br ><br >
+    <input type="text" placeholder="Name" />
+
+    <br ><br ><br ><br >
+    {{lorem-ipsum length=1000}}
+
+    <button {{action 'closeModal'}}>Close</button>
+  {{/modal-dialog}}
+{{/if}}
